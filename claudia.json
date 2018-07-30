@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "groupee-bot-executor",
+    "name": "groupee-bot",
+    "region": "ap-southeast-1"
+  },
+  "api": {
+    "id": "5e8orgq1d2",
+    "module": "bot"
+  }
+}

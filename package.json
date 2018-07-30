@@ -1,0 +1,34 @@
+{
+  "name": "claudia-telegram-bot-barebones",
+  "version": "1.0.0",
+  "description": "A starter serverless function - Built with the Claudia Bot Builder; Deployed to AWS Lambda",
+  "main": "index.js",
+  "scripts": {
+    "create-prod": "claudia create --profile claudia --version prod --region ap-southeast-1 --api-module bot --timeout 8 --memory 256",
+    "create-dev": "claudia create --profile claudia --version dev --region ap-southeast-1 --api-module bot --timeout 8 --memory 256",
+    "update-telegram-prod": "claudia update --version prod --configure-telegram-bot --cache-api-config prodTelegramConfig --set-env-from-json env.prod.json",
+    "update-telegram-dev": "claudia update --version dev --configure-telegram-bot --cache-api-config devTelegramConfig --set-env-from-json env.dev.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NatashaKSS/groupee-bot.git"
+  },
+  "keywords": [
+    "telegram",
+    "chatbot",
+    "bot"
+  ],
+  "author": "Natasha Koh Sze Sze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NatashaKSS/groupee-bot/issues"
+  },
+  "homepage": "https://github.com/NatashaKSS/groupee-bot#readme",
+  "devDependencies": {
+    "claudia": "^5.1.0"
+  },
+  "dependencies": {
+    "claudia-bot-builder": "^4.3.0",
+    "huh": "^2.0.1"
+  }
+}
