@@ -4,10 +4,8 @@
   "description": "A starter serverless function - Built with the Claudia Bot Builder; Deployed to AWS Lambda",
   "main": "index.js",
   "scripts": {
-    "create-prod": "claudia create --profile claudia --version prod --region ap-southeast-1 --api-module bot --timeout 8 --memory 256",
-    "create-dev": "claudia create --profile claudia --version dev --region ap-southeast-1 --api-module bot --timeout 8 --memory 256",
+    "create-prod": "claudia create --profile claudia --version prod --region ap-southeast-1 --api-module bot --timeout 8 --memory 256 --configure-telegram-bot ",
     "update-telegram-prod": "claudia update --version prod --configure-telegram-bot --cache-api-config prodTelegramConfig --set-env-from-json env.prod.json",
-    "update-telegram-dev": "claudia update --version dev --configure-telegram-bot --cache-api-config devTelegramConfig --set-env-from-json env.dev.json"
   },
   "repository": {
     "type": "git",
