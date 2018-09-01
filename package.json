@@ -4,9 +4,25 @@
   "description": "A starter serverless function - Built with the Claudia Bot Builder; Deployed to AWS Lambda",
   "main": "index.js",
   "scripts": {
-    "create-prod": "claudia create --profile claudia --version prod --region ap-southeast-1 --api-module bot --timeout 8 --memory 256 --configure-telegram-bot ",
-    "update-telegram-prod": "claudia update --version prod --configure-telegram-bot --cache-api-config prodTelegramConfig --set-env-from-json env.prod.json",
+    "build": "babel src -d dist",
+    "deploy-claudia": "claudia create --profile claudia --version prod --region ap-southeast-1 --api-module bot --timeout 8 --memory 256 --configure-telegram-bot --source dist",
+    "update-claudia-telegram-prod": "claudia update --version prod --configure-telegram-bot --cache-api-config prodTelegramConfig --set-env-from-json env.prod.json",
+    "create-prod": "npm run build npm run deploy-claudia",
+    "update-telegram-prod": "npm run build npm run update-claudia-telegram-prod"
   },
+  "dependencies": {
+    "claudia-bot-builder": "^4.3.0",
+    "huh": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "claudia": "^5.1.0"
+  },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NatashaKSS/groupee-bot.git"
@@ -21,12 +37,5 @@
   "bugs": {
     "url": "https://github.com/NatashaKSS/groupee-bot/issues"
   },
-  "homepage": "https://github.com/NatashaKSS/groupee-bot#readme",
-  "devDependencies": {
-    "claudia": "^5.1.0"
-  },
-  "dependencies": {
-    "claudia-bot-builder": "^4.3.0",
-    "huh": "^2.0.1"
-  }
+  "homepage": "https://github.com/NatashaKSS/groupee-bot#readme"
 }
