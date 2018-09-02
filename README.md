@@ -1,6 +1,6 @@
 # Barebones Claudia Bot (lambda function) Boilerplate
 
-A starter serverless function - Built with the Claudia Bot Builder Platform; Deployed to AWS Lambda
+A starter serverless function - Built with the Claudia Bot Builder Platform; Deployed to AWS Lambda; Transpiled using Babel.
 
 ### Usage
 
